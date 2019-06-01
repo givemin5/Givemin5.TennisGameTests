@@ -6,7 +6,6 @@ namespace Givemin5.TennisGameTests
     public class TennisGameTests
     {
         private TennisGame tennisGame = new TennisGame("Joey", "Ming");
-
         [TestMethod]
         public void Love_All()
         {
