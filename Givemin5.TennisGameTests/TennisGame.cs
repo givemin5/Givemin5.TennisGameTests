@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Givemin5.TennisGameTests
 {
@@ -26,11 +27,12 @@ namespace Givemin5.TennisGameTests
             };
             if (_firstPlayerScore != _secondPlayerScore)
             {
-                if (_firstPlayerScore > 3)
+                if (_firstPlayerScore > 3 || _secondPlayerScore > 3)
                 {
-                    if (_firstPlayerScore - _secondPlayerScore == 1)
+                    if (Math.Abs(_firstPlayerScore - _secondPlayerScore) == 1)
                     {
-                        return $"{_firstPlayerName} Adv";
+                        var advPlayer = _firstPlayerScore > _secondPlayerScore ? _firstPlayerName : _secondPlayerName;
+                        return $"{advPlayer} Adv";
                     }
                 }
 
