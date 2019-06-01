@@ -16,20 +16,21 @@ namespace Givemin5.TennisGameTests
             _secondPlayerName = secondPlayerName;
         }
 
-        public string Score()
-        {
-            var scoreLookup = new Dictionary<int, string>
+        private Dictionary<int, string> scoreLookup = new Dictionary<int, string>
             {
                 {0,"Love" },
                 {1,"Fifteen" },
                 {2,"Thirty" },
                 {3,"Forty" },
             };
-            if (IsScoreDifferent())
+
+        public string Score()
+        {
+            if (_firstPlayerScore != _secondPlayerScore)
             {
                 if (IsReadyForWin())
                 {
-                    var advPlayer = AdvPlayer();
+                    string advPlayer = AdvPlayer();
                     if (IsAdv())
                     {
                         return $"{advPlayer} Adv";
@@ -46,11 +47,6 @@ namespace Givemin5.TennisGameTests
             return $"{scoreLookup[_firstPlayerScore]} All";
         }
 
-        private bool IsScoreDifferent()
-        {
-            return _firstPlayerScore != _secondPlayerScore;
-        }
-
         private bool IsAdv()
         {
             return Math.Abs(_firstPlayerScore - _secondPlayerScore) == 1;
@@ -63,7 +59,7 @@ namespace Givemin5.TennisGameTests
 
         private string AdvPlayer()
         {
-            var advPlayer = _firstPlayerScore > _secondPlayerScore ? _firstPlayerName : _secondPlayerName;
+            string advPlayer = _firstPlayerScore > _secondPlayerScore ? _firstPlayerName : _secondPlayerName;
             return advPlayer;
         }
 
