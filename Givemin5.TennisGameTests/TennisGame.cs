@@ -5,6 +5,7 @@ namespace Givemin5.TennisGameTests
     public class TennisGame
     {
         private int _firstPlayerScore;
+        private int _secondPlayerScore;
 
         public string Score()
         {
@@ -18,7 +19,10 @@ namespace Givemin5.TennisGameTests
             {
                 return $"{scoreLookup[_firstPlayerScore]} Love";
             }
-
+            if (_secondPlayerScore == 1)
+            {
+                return "Love Fifteen";
+            }
             return "Love All";
         }
 
@@ -29,7 +33,7 @@ namespace Givemin5.TennisGameTests
 
         public void SecondPlayerScore()
         {
-            throw new System.NotImplementedException();
+            _secondPlayerScore++;
         }
     }
 }
