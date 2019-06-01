@@ -20,6 +20,10 @@ namespace Givemin5.TennisGameTests
             {
                 return $"{scoreLookup[_firstPlayerScore]} {scoreLookup[_secondPlayerScore]}";
             }
+            if (_firstPlayerScore >= 3)
+            {
+                return "Deuce";
+            }
             return $"{scoreLookup[_firstPlayerScore]} All";
         }
 
