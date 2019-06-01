@@ -59,7 +59,7 @@ namespace Givemin5.TennisGameTests
         public void Fifteen_All()
         {
             FirstPlayerScoreTimes(1);
-            SecondPlayerScoreTimes(3);
+            SecondPlayerScoreTimes(1);
             ScoreShouldBe("Fifteen All");
         }
 
