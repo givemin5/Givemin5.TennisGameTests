@@ -10,9 +10,7 @@ namespace Givemin5.TennisGameTests
         [TestMethod]
         public void Love_All()
         {
-        
             ScoreShouldBe("Love All");
-
         }
 
         [TestMethod]
@@ -100,6 +98,14 @@ namespace Givemin5.TennisGameTests
             ScoreDeuce();
             FirstPlayerScoreTimes(1);
             ScoreShouldBe("Joey Adv");
+        }
+
+        [TestMethod]
+        public void SecondPlayerAdv()
+        {
+            ScoreDeuce();
+            SecondPlayerScoreTimes(1);
+            ScoreShouldBe("Ming Adv");
         }
 
         private void SecondPlayerScoreTimes(int times)
