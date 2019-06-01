@@ -11,19 +11,19 @@ namespace Givemin5.TennisGameTests
         {
             var scoreLookup = new Dictionary<int, string>
             {
+                {0,"Love" },
                 {1,"Fifteen" },
                 {2,"Thirty" },
                 {3,"Forty" },
             };
-            if (_firstPlayerScore >= 1)
+            if (_firstPlayerScore != _secondPlayerScore)
             {
-                return $"{scoreLookup[_firstPlayerScore]} Love";
+                return $"{scoreLookup[_firstPlayerScore]} {scoreLookup[_secondPlayerScore]}";
             }
-            if (_secondPlayerScore >= 1)
+            if (_firstPlayerScore == 1 && _secondPlayerScore == 1)
             {
-                return $"Love {scoreLookup[_secondPlayerScore]}";
+                return "Fifteen All";
             }
-
             return "Love All";
         }
 
