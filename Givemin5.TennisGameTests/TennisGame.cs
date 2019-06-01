@@ -6,6 +6,14 @@ namespace Givemin5.TennisGameTests
     {
         private int _firstPlayerScore;
         private int _secondPlayerScore;
+        private string _firstPlayerName;
+        private string _secondPlayerName;
+
+        public TennisGame(string firstPlayerName, string secondPlayerName)
+        {
+            _firstPlayerName = firstPlayerName;
+            _secondPlayerName = secondPlayerName;
+        }
 
         public string Score()
         {
@@ -18,6 +26,14 @@ namespace Givemin5.TennisGameTests
             };
             if (_firstPlayerScore != _secondPlayerScore)
             {
+                if (_firstPlayerScore > 3)
+                {
+                    if (_firstPlayerScore - _secondPlayerScore == 1)
+                    {
+                        return $"{_firstPlayerName} Adv";
+                    }
+                }
+
                 return $"{scoreLookup[_firstPlayerScore]} {scoreLookup[_secondPlayerScore]}";
             }
             if (_firstPlayerScore >= 3)
