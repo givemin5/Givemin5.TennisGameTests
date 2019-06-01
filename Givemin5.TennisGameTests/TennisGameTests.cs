@@ -17,7 +17,7 @@ namespace Givemin5.TennisGameTests
         public void Fifteen_Love()
         {
             tennisGame.FirstPlayerScore();
-            ScoreShouldBe("Love All");
+            ScoreShouldBe("Fifteen Love");
         }
 
         private void ScoreShouldBe(string expected)
