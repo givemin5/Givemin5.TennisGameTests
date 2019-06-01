@@ -29,11 +29,12 @@ namespace Givemin5.TennisGameTests
             {
                 if (_firstPlayerScore > 3 || _secondPlayerScore > 3)
                 {
+                    var advPlayer = _firstPlayerScore > _secondPlayerScore ? _firstPlayerName : _secondPlayerName;
                     if (Math.Abs(_firstPlayerScore - _secondPlayerScore) == 1)
                     {
-                        var advPlayer = _firstPlayerScore > _secondPlayerScore ? _firstPlayerName : _secondPlayerName;
                         return $"{advPlayer} Adv";
                     }
+                    return $"{advPlayer} Win";
                 }
 
                 return $"{scoreLookup[_firstPlayerScore]} {scoreLookup[_secondPlayerScore]}";
