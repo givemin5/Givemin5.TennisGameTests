@@ -27,5 +27,10 @@ namespace Givemin5.TennisGameTests
         {
             _firstPlayerScoreTimes++;
         }
+
+        public void SecondPlayerScore()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
