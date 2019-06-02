@@ -18,9 +18,9 @@ namespace Givemin5.TennisGameTests
             };
             if (_firstPlayerScoreTimes == _secondPlayerScoreTimes)
             {
-                if (_firstPlayerScoreTimes == 1)
+                if (_firstPlayerScoreTimes >= 1)
                 {
-                    return "Fifteen All";
+                    return $"{scoreLookup[_firstPlayerScoreTimes]} All";
                 }
             }
             if (_firstPlayerScoreTimes >= 1)
