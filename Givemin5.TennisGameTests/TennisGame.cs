@@ -1,4 +1,6 @@
-﻿namespace Givemin5.TennisGameTests
+﻿using System.Collections.Generic;
+
+namespace Givemin5.TennisGameTests
 {
     public class TennisGame
     {
@@ -6,15 +8,18 @@
 
         public string Score()
         {
-            if (_firstPlayerScoreTimes == 1)
+            var scoreLookup = new Dictionary<int, string>
             {
-                return "Fifteen Love";
+                {1,"Fifteen" },
+                {2,"Thirty" },
+
+                {3,"Forty" },
+            };
+            if (_firstPlayerScoreTimes >= 1)
+            {
+                return $"{scoreLookup[_firstPlayerScoreTimes]} Love";
             }
 
-            if (_firstPlayerScoreTimes == 2)
-            {
-                return "Thirty Love";
-            }
             return "Love All";
         }
 
