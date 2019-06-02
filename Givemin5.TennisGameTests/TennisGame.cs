@@ -4,14 +4,21 @@ namespace Givemin5.TennisGameTests
 {
     public class TennisGame
     {
+        private int _firstPlayerScoreTimes;
+
         public String Score()
         {
+            if (_firstPlayerScoreTimes == 1)
+            {
+                return "Fifteen Love";gc
+            }
+
             return "Love All";
         }
 
         public void FirstPlayerScore()
         {
-            throw new NotImplementedException();
+            _firstPlayerScoreTimes++;
         }
     }
 }
