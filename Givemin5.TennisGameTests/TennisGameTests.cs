@@ -5,7 +5,7 @@ namespace Givemin5.TennisGameTests
     [TestClass]
     public class TennisGameTests
     {
-        private TennisGame tennisGame = new TennisGame();
+        private readonly TennisGame _tennisGame = new TennisGame("Joey","Ming");
 
         [TestMethod]
         public void Love_All()
@@ -60,9 +60,21 @@ namespace Givemin5.TennisGameTests
         [TestMethod]
         public void Deuce()
         {
+            PlayerDeuce();
+            ScoreShouldBe("Deuce");
+        }
+
+        [TestMethod]
+        public void FirstPlayerAdv()
+        {
+            PlayerDeuce();
+            FirstPlayerScoreTimes(1);
+            ScoreShouldBe("Joey Adv");
+        }
+        private void PlayerDeuce()
+        {
             FirstPlayerScoreTimes(3);
             SecondPlayerScoreTimes(3);
-            ScoreShouldBe("Deuce");
         }
 
         [TestMethod]
@@ -77,7 +89,7 @@ namespace Givemin5.TennisGameTests
         {
             for (int i = 0; i < times; i++)
             {
-                tennisGame.SecondPlayerScore();
+                _tennisGame.SecondPlayerScore();
             }
         }
 
@@ -99,13 +111,13 @@ namespace Givemin5.TennisGameTests
         {
             for (int i = 0; i < times; i++)
             {
-                tennisGame.FirstPlayerScore();
+                _tennisGame.FirstPlayerScore();
             }
         }
 
         private void ScoreShouldBe(string expected)
         {
-            Assert.AreEqual(expected, tennisGame.Score());
+            Assert.AreEqual(expected, _tennisGame.Score());
         }
     }
 }
