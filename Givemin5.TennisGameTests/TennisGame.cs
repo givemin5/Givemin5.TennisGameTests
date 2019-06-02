@@ -8,5 +8,10 @@ namespace Givemin5.TennisGameTests
         {
             return "Love All";
         }
+
+        public void FirstPlayerScore()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
