@@ -87,6 +87,14 @@ namespace Givemin5.TennisGameTests
             ScoreShouldBe("Fifteen Thirty");
         }
 
+        [TestMethod]
+        public void Deuce()
+        {
+            FirstPlayerScoreTimes(3);
+            SecondPlayerScoreTimes(3);
+            ScoreShouldBe("Deuce");
+        }
+
         private void SecondPlayerScoreTimes(int times)
         {
             for (int i = 0; i < times; i++)

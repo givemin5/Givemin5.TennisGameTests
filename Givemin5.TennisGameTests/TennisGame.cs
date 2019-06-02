@@ -17,22 +17,11 @@ namespace Givemin5.TennisGameTests
                 {2,"Thirty" },
                 {3,"Forty" },
             };
-            if (_firstPlayerScoreTimes == _secondPlayerScoreTimes)
-            {
-                if (_firstPlayerScoreTimes >= 1)
-                {
-                    return $"{scoreLookup[_firstPlayerScoreTimes]} All";
-                }
-            }
-            if (_firstPlayerScoreTimes >= 1)
+            if (_firstPlayerScoreTimes != _secondPlayerScoreTimes)
             {
                 return $"{scoreLookup[_firstPlayerScoreTimes]} {scoreLookup[_secondPlayerScoreTimes]}";
             }
-            if (_secondPlayerScoreTimes >= 1)
-            {
-                return $"Love {scoreLookup[_secondPlayerScoreTimes]}";
-            }
-            return "Love All";
+            return $"{scoreLookup[_firstPlayerScoreTimes]} All";
         }
 
         public void FirstPlayerScore()
