@@ -5,7 +5,7 @@ namespace Givemin5.TennisGameTests
     [TestClass]
     public class TennisGameTests
     {
-        private readonly TennisGame _tennisGame = new TennisGame();
+        private readonly TennisGame _tennisGame = new TennisGame("Joey","Ming");
 
         [TestMethod]
         public void Love_All()
@@ -74,9 +74,21 @@ namespace Givemin5.TennisGameTests
         [TestMethod]
         public void Deuce()
         {
+            PlayerDeuce();
+            ScoreShoudBe("Deuce");
+        }
+
+        [TestMethod]
+        public void FirstPlayerAdv()
+        {
+            PlayerDeuce();
+            FirstPlayerScoreTimes(1);
+            ScoreShoudBe("Joey Adv");
+        }
+        private void PlayerDeuce()
+        {
             FirstPlayerScoreTimes(3);
             SecondPlayerScoreTimes(3);
-            ScoreShoudBe("Deuce");
         }
 
         [TestMethod]
