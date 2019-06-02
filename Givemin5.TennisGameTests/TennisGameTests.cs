@@ -72,12 +72,13 @@ namespace Givemin5.TennisGameTests
         }
 
         [TestMethod]
-        public void Fifteen_Fifteen()
+        public void Thirty_Fifteen()
         {
-            FirstPlayerScoreTimes(1);
+            FirstPlayerScoreTimes(2);
             SecondPlayerScoreTimes(1);
-            ScoreShouldBe("Thirty All");
+            ScoreShouldBe("Thirty Fifteen");
         }
+
         private void SecondPlayerScoreTimes(int times)
         {
             for (int i = 0; i < times; i++)
