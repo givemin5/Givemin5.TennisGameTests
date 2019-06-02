@@ -7,21 +7,23 @@ namespace Givemin5.TennisGameTests
         private int _firstPlayerScoreTimes;
         private int _secondPlayerScoreTimes;
 
-        public string Score()
-        {
-            var scoreLookup = new Dictionary<int, string>
+        private Dictionary<int, string> scoreLookup = new Dictionary<int, string>
             {
+                {0,"Love" },
                 {1,"Fifteen" },
                 {2,"Thirty" },
                 {3,"Forty" },
             };
-            if (_firstPlayerScoreTimes >= 1)
+
+        public string Score()
+        {
+            if (_firstPlayerScoreTimes != _secondPlayerScoreTimes)
             {
-                return $"{scoreLookup[_firstPlayerScoreTimes]} Love";
+                return $"{scoreLookup[_firstPlayerScoreTimes]} {scoreLookup[_secondPlayerScoreTimes]}";
             }
-            if (_secondPlayerScoreTimes >= 1)
+            if (_firstPlayerScoreTimes == 1)
             {
-                return $"Love {scoreLookup[_secondPlayerScoreTimes]}";
+                return "Fifteen All";
             }
             return "Love All";
         }
