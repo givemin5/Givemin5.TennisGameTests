@@ -6,7 +6,7 @@ namespace Givemin5.TennisGameTests
     {
         public String Score()
         {
-            throw new System.NotImplementedException();
+            return "Love All";
         }
     }
 }
