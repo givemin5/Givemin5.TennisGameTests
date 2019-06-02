@@ -34,6 +34,13 @@ namespace Givemin5.TennisGameTests
             ScoreShoudBe("Forty Love");
         }
 
+        [TestMethod]
+        public void Love_Fifteen()
+        {
+            _tennisGame.SecondPlayerScore();
+            ScoreShoudBe("Love Fifteen");
+        }
+
         private void FirstPlayerScoreTimes(int times)
         {
             for (int i = 0; i < times; i++)
