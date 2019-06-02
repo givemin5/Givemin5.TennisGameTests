@@ -10,7 +10,7 @@ namespace Givemin5.TennisGameTests
         {
             if (_firstPlayerScoreTimes == 1)
             {
-                return "Fifteen Love";gc
+                return "Fifteen Love";
             }
 
             return "Love All";
