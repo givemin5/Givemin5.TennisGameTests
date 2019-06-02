@@ -102,6 +102,14 @@ namespace Givemin5.TennisGameTests
             ScoreShouldBe("Joey Adv");
         }
 
+        [TestMethod]
+        public void SecondPlayerAdv()
+        {
+            PlayerDeuce();
+            SecondPlayerScoreTimes(1);
+            ScoreShouldBe("Ming Adv");
+        }
+
         private void PlayerDeuce()
         {
             FirstPlayerScoreTimes(3);
