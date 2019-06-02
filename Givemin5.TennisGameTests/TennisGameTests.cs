@@ -80,6 +80,14 @@ namespace Givemin5.TennisGameTests
             ScoreShouldBe("Ming Adv");
         }
 
+        [TestMethod]
+        public void FirstPlayerWin()
+        {
+            PlayerDeuce();
+            FirstPlayerScoreTimes(2);
+            ScoreShouldBe("Joey Win");
+        }
+
         private void PlayerDeuce()
         {
             FirstPlayerScoreTimes(3);
