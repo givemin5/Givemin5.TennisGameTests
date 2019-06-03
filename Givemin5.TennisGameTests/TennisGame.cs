@@ -18,15 +18,15 @@ namespace Givemin5.TennisGameTests
 
         public string Score()
         {
-            if (_firstPlayerScoreTimes >= 1)
-            {
-                return $"{_scoreLookup[_firstPlayerScoreTimes]} {_scoreLookup[_secondPlayerScoreTimes]}";
-            }
-            if (_secondPlayerScoreTimes >= 1)
+            if (_firstPlayerScoreTimes != _secondPlayerScoreTimes)
             {
                 return $"{_scoreLookup[_firstPlayerScoreTimes]} {_scoreLookup[_secondPlayerScoreTimes]}";
             }
 
+            if (_firstPlayerScoreTimes == 1)
+            {
+                return "Fifteen All";
+            }
             return "Love All";
         }
 
