@@ -27,6 +27,11 @@ namespace Givemin5.TennisGameTests
             {
                 return "Fifteen All";
             }
+
+            if (_firstPlayerScoreTimes == 2)
+            {
+                return "Thirty All";
+            }
             return "Love All";
         }
 
