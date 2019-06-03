@@ -36,7 +36,6 @@ namespace Givemin5.TennisGameTests
                     {
                         return $"{advPlayer} Adv";
                     }
-
                     return $"{advPlayer} Win";
                 }
 
