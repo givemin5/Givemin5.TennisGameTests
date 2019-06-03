@@ -22,7 +22,7 @@ namespace Givemin5.TennisGameTests
             {
                 return $"{_scoreLookup[_firstPlayerScoreTimes]} {_scoreLookup[_secondPlayerScoreTimes]}";
             }
-            if (_firstPlayerScoreTimes == 3)
+            if (_firstPlayerScoreTimes >= 3)
             {
                 return "Deuce";
             }
