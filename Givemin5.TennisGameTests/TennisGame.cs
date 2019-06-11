@@ -16,9 +16,13 @@ namespace Givemin5.TennisGameTests
                 {2,"Thirty" },
                 {3,"Forty" },
             };
-            if (_firstPlayerScoreTimes >= 1 || _secondPlayerScoreTimes >= 1)
+            if (_firstPlayerScoreTimes != _secondPlayerScoreTimes)
             {
                 return $"{scoreLookup[_firstPlayerScoreTimes]} {scoreLookup[_secondPlayerScoreTimes]}";
+            }
+            if (_firstPlayerScoreTimes == 1)
+            {
+                return "Fifteen All";
             }
             return "Love All";
         }
