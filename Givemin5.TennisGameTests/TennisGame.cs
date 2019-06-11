@@ -15,24 +15,33 @@ namespace Givemin5.TennisGameTests
             _secondPlayerName = secondPlayerName;
         }
 
-        public string Score()
-        {
-            Dictionary<int, string> scoreLookup = new Dictionary<int, string>
+        private Dictionary<int, string> _scoreLookup = new Dictionary<int, string>
             {
                 {0,"Love" },
                 {1,"Fifteen" },
                 {2,"Thirty" },
                 {3,"Forty" },
             };
+
+        public string Score()
+        {
             if (_firstPlayerScoreTimes != _secondPlayerScoreTimes)
             {
-                return $"{scoreLookup[_firstPlayerScoreTimes]} {scoreLookup[_secondPlayerScoreTimes]}";
+                if (_firstPlayerScoreTimes > 3)
+                {
+                    if (_firstPlayerScoreTimes - _secondPlayerScoreTimes == 1)
+                    {
+                        return $"{_firstPlayerName} Adv";
+                    }
+                }
+
+                return $"{_scoreLookup[_firstPlayerScoreTimes]} {_scoreLookup[_secondPlayerScoreTimes]}";
             }
             if (_firstPlayerScoreTimes >= 3)
             {
                 return "Deuce";
             }
-            return $"{scoreLookup[_firstPlayerScoreTimes]} All";
+            return $"{_scoreLookup[_firstPlayerScoreTimes]} All";
         }
 
         public void FirstPlayerScore()
