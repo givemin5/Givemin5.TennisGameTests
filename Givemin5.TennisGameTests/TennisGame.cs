@@ -6,6 +6,14 @@ namespace Givemin5.TennisGameTests
     {
         private int _firstPlayerScoreTimes;
         private int _secondPlayerScoreTimes;
+        private string _firstPlayerName;
+        private string _secondPlayerName;
+
+        public TennisGame(string firstPlayerName, string secondPlayerName)
+        {
+            _firstPlayerName = firstPlayerName;
+            _secondPlayerName = secondPlayerName;
+        }
 
         public string Score()
         {
