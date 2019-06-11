@@ -20,11 +20,8 @@ namespace Givemin5.TennisGameTests
             {
                 return $"{scoreLookup[_firstPlayerScoreTimes]} {scoreLookup[_secondPlayerScoreTimes]}";
             }
-            if (_firstPlayerScoreTimes == 1)
-            {
-                return "Fifteen All";
-            }
-            return "Love All";
+
+            return $"{scoreLookup[_firstPlayerScoreTimes]} All";
         }
 
         public void FirstPlayerScore()
