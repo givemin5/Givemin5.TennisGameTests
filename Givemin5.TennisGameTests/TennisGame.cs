@@ -26,12 +26,12 @@ namespace Givemin5.TennisGameTests
 
         public string Score()
         {
-            if (_firstPlayerScoreTimes != _secondPlayerScoreTimes)
+            if (IsScoreDifferent())
             {
-                if (_firstPlayerScoreTimes > 3 || _secondPlayerScoreTimes > 3)
+                if (IsReadyForWin())
                 {
                     var advPlayer = AdvPlayer();
-                    if (Math.Abs(_firstPlayerScoreTimes - _secondPlayerScoreTimes) == 1)
+                    if (IsAdv())
                     {
                         return $"{advPlayer} Adv";
                     }
@@ -40,11 +40,31 @@ namespace Givemin5.TennisGameTests
 
                 return $"{_scoreLookup[_firstPlayerScoreTimes]} {_scoreLookup[_secondPlayerScoreTimes]}";
             }
-            if (_firstPlayerScoreTimes >= 3)
+            if (IsDeuce())
             {
                 return "Deuce";
             }
             return $"{_scoreLookup[_firstPlayerScoreTimes]} All";
+        }
+
+        private bool IsScoreDifferent()
+        {
+            return _firstPlayerScoreTimes != _secondPlayerScoreTimes;
+        }
+
+        private bool IsAdv()
+        {
+            return Math.Abs(_firstPlayerScoreTimes - _secondPlayerScoreTimes) == 1;
+        }
+
+        private bool IsReadyForWin()
+        {
+            return _firstPlayerScoreTimes > 3 || _secondPlayerScoreTimes > 3;
+        }
+
+        private bool IsDeuce()
+        {
+            return _firstPlayerScoreTimes >= 3;
         }
 
         private string AdvPlayer()
